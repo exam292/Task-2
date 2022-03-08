@@ -1,3 +1,4 @@
+
 <?php
     include 'BladeOne/lib/BladeOne.php';
     use eftec\bladeone\BladeOne;
@@ -7,4 +8,4 @@
 
     $blade = new BladeOne($views,$cache,BladeOne::MODE_DEBUG);
 
-    echo $blade->run("index",array());
+    echo $blade->run("logout",array("variable1"=>$username));
