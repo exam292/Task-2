@@ -22,3 +22,9 @@ session_start();
 
 
 @endsection
+@section('content2')
+
+<p>arse</p>
+<a href="Login.php" class="booton btn btn-warning">Reset Your Password</a>
+
+@endsection

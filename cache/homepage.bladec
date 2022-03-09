@@ -22,4 +22,10 @@ session_start();
 
 
 <?php $this->stopSection(); ?>
+<?php $this->startSection('content2'); ?>
+
+<p>arse</p>
+<a href="Login.php" class="booton btn btn-warning">Reset Your Password</a>
+
+<?php $this->stopSection(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('app'); } ?>
