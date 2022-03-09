@@ -1,11 +1,10 @@
 <?php
-include 'BladeOne/lib/BladeOne.php';
-use eftec\bladeone\BladeOne;
+    include 'BladeOne/lib/BladeOne.php';
+    use eftec\bladeone\BladeOne;
 
-$views = __DIR__ . '/views';
-$cache = __DIR__ . '/cache';
+    $views = __DIR__ . '/views';
+    $cache = __DIR__ . '/cache';
 
-$blade = new BladeOne($views,$cache,BladeOne::MODE_DEBUG);
+    $blade = new BladeOne($views,$cache,BladeOne::MODE_DEBUG);
 
-$username="Ben";
-echo $blade->run("login",array("variable1"=>$username));
+    echo $blade->run("login",array("variable1"=>$username));

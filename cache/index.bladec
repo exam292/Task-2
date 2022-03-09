@@ -23,4 +23,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
 <?php $this->stopSection(); ?>
+<?php $this->startSection('content2'); ?>
+<h1>Placeholder</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+<?php $this->stopSection(); ?>
+<?php $this->startSection('content3'); ?>
+<h1>Placeholder</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+<?php $this->stopSection(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('app'); } ?>

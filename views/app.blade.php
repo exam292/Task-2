@@ -9,26 +9,28 @@
                 <header class="row text-center mx-auto">
                     @include('header')
                 </header>
-                <div class="content" style="padding: 30px;">
-                            <div class="container-fluid overflow-hidden">
-                                <div class="row gx-5">
-                                    <div class="col shadow p-3 mb-5 bg-light">
-                                        <p>egg</p>
+                <span class="align-middle">
+                <div class="content">
+                            <div class="container">
+                                <div class="row gx-5 justify-content-center">
+                                    <div class="col-4 shadow p-3 mb-5 bg-light">
+                                        @yield('content2')
                                     </div>
                                 </div>
-                                <div class="row gx-5">
-                                    <div class="col">
-                                        <div class="p-3 border bg-light">@yield('content')</div>
+                                <div class="row gx-3 justify-content-evenly">
+                                    <div class="col-3">
+                                        <div class="p-3 border bg-light shadow">@yield('content2')</div>
                                     </div>
-                                    <div class="col">
-                                        <div class="p-3 border bg-light">@yield('content')</div>
+                                    <div class="col-3">
+                                        <div class="p-3 border bg-light shadow">@yield('content2')</div>
                                     </div>
-                                    <div class="col">
-                                        <div class="p-3 border bg-light">@yield('content')</div>
+                                    <div class="col-3">
+                                        <div class="p-3 border bg-light shadow">@yield('content2')</div>
                                     </div>
                                 </div>
                             </div>                           
                 </div>
+                </span>
                 <footer>
                   @include('footer')  
                 </footer>
