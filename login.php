@@ -7,4 +7,4 @@
 
     $blade = new BladeOne($views,$cache,BladeOne::MODE_DEBUG);
 
-    echo $blade->run("login",array("variable1"=>$username));
+    echo $blade->run("login",array());

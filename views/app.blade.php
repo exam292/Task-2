@@ -19,13 +19,13 @@
                                 </div>
                                 <div class="row gx-3 justify-content-evenly">
                                     <div class="col-3">
-                                        <div class="p-3 border bg-light shadow">@yield('content2')</div>
+                                        <div class="p-3 border bg-light shadow">@yield('content')</div>
                                     </div>
                                     <div class="col-3">
-                                        <div class="p-3 border bg-light shadow">@yield('content2')</div>
+                                        <div class="p-3 border bg-light shadow">@yield('')</div>
                                     </div>
                                     <div class="col-3">
-                                        <div class="p-3 border bg-light shadow">@yield('content2')</div>
+                                        <div class="p-3 border bg-light shadow">@yield('')</div>
                                     </div>
                                 </div>
                             </div>                           

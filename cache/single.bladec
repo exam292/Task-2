@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+ <html>
+ <head>
+ <?php echo $this->runChild('head'); ?>
+ </head>
+ <body class="mx-auto text-dark">
+ <div>
+ <header class="row text-center mx-auto">
+ <?php echo $this->runChild('header'); ?>
+ </header>
+
+ <div class="p-3 border bg-light shadow"><?php echo $this->yieldContent('content'); ?></div>
+
+
+ <footer>
+ <?php echo $this->runChild('footer'); ?>  
+ </footer>
+ </div>
+ </body>
+ </html>

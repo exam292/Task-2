@@ -8,14 +8,17 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,255,136,1) 0%, rg
 .scroll{
     height:400px; width:100%; overflow:hidden; overflow-y:scroll;
     }
-.content{
-text-align: center;
-padding: 130px 0;
-border: 3px;
-}
+
 .booton{
     padding: 5px;
 }
 .placeholder{
     width: auto;
+}
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 10px; 
+    text-align: center;
 }

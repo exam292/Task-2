@@ -7,25 +7,16 @@
 session_start();
 ?>
 
-<div class="container">
- <div class="row justify-content-start">
- <div class="col-sm">
- One of three columns
- </div>
- </div>
- <div class="row justify-content-end">
- <div class="col-sm">
- One of three columns
- </div>
- </div>
-</div>
-
+<div
+ class="bg-image"
+ style="
+ background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cntraveller.com%2Fgallery%2Fcornwall-beaches&psig=AOvVaw22FeOBoGkckGUpZMutStwx&ust=1647087301806000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCMDFkL6EvvYCFQAAAAAdAAAAABAE');
+ height: 100vh;
+ "
+></div>
 
 <?php $this->stopSection(); ?>
 <?php $this->startSection('content2'); ?>
 
-<p>arse</p>
-<a href="Login.php" class="booton btn btn-warning">Reset Your Password</a>
-
 <?php $this->stopSection(); ?>
-<?php if (isset($_shouldextend[1])) { echo $this->runChild('app'); } ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('single'); } ?>

@@ -1,4 +1,4 @@
-@extends('app')
+@extends('single')
 
 @section('content')
 <?php
@@ -94,5 +94,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <p>Don't have an account? <a href="signup.php">Sign up now</a>.</p>
         </form>
     </div>
+
+    @endsection
+
+    @section('content2')
+
+        <h1>Login:</h1>
 
     @endsection
