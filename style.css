@@ -2,7 +2,7 @@ body{
 background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,255,136,1) 0%, rgba(139,255,220,1) 100%);
 }
-.style1{
+.thin-line{
 	border-top: 1px solid #8c8b8b;
 }
 .scroll{
@@ -22,3 +22,24 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,255,136,1) 0%, rg
     padding: 10px; 
     text-align: center;
 }
+
+.double-layout{
+    padding: 60px;
+}
+.bg-image {
+    /* The image used */
+    background-image: url("https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  

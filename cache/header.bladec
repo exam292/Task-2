@@ -1,4 +1,4 @@
-<nav class="navbar shadow navbar-expand-lg navbar-light">
+<nav class="navbar shadow navbar-expand-lg bg-dark navbar-dark text-light">
  <div class="container">
  <a class="navbar-brand" href="#"><strong>GibJohn Tutoring</strong></a>
 
@@ -9,10 +9,10 @@
  <a class="nav-link" href="homepage.php">Home</a>
  </li>
  <li class="nav-item">
- <a class="nav-link" href="#">Link</a>
+ <a class="nav-link" href="login.php">Login</a>
  </li>
  <li class="nav-item">
- <a class="nav-link" href="#"></a>
+ <a class="nav-link" href="signup.php">Signup</a>
  </li>
  </ul>
  </div>

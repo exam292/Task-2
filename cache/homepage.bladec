@@ -1,22 +1,17 @@
 <?php $_shouldextend[1]=1; ?>
 
-<?php $this->startSection('content'); ?>
+<?php $this->startSection('gibjohndesc'); ?>
 
 <?php
 // Initialize the session
 session_start();
 ?>
-
-<div
- class="bg-image"
- style="
- background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cntraveller.com%2Fgallery%2Fcornwall-beaches&psig=AOvVaw22FeOBoGkckGUpZMutStwx&ust=1647087301806000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCMDFkL6EvvYCFQAAAAAdAAAAABAE');
- height: 100vh;
- "
-></div>
-
+<div class="container-fluid px-4 text-center">
+ <h1 style="padding-top: 150px;">Welcome to GibJohn Tutoring!</h1>
+ <p class="lead">Inspiring Education</p>
+ <a class="btn btn-lg btn-light" href="index.php">Start learning!</a>
+ </div>
+</div>
 <?php $this->stopSection(); ?>
-<?php $this->startSection('content2'); ?>
 
-<?php $this->stopSection(); ?>
-<?php if (isset($_shouldextend[1])) { echo $this->runChild('single'); } ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('plainlayout'); } ?>

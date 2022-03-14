@@ -97,9 +97,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
  <?php $this->stopSection(); ?>
 
- <?php $this->startSection('content2'); ?>
+ <?php $this->startSection('title'); ?>
 
  <h1>Login:</h1>
 
  <?php $this->stopSection(); ?>
-<?php if (isset($_shouldextend[1])) { echo $this->runChild('single'); } ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('doublelayout'); } ?>

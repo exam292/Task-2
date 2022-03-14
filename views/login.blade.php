@@ -1,4 +1,4 @@
-@extends('single')
+@extends('doublelayout')
 
 @section('content')
 <?php
@@ -97,7 +97,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     @endsection
 
-    @section('content2')
+    @section('title')
 
         <h1>Login:</h1>
 
