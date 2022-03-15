@@ -7,4 +7,4 @@
 
     $blade = new BladeOne($views,$cache,BladeOne::MODE_DEBUG);
 
-    echo $blade->run("index",array());
+    echo $blade->run("index",array("page" => "dashboard"));

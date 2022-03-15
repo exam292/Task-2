@@ -59,16 +59,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  } else{
  echo "Oops! Something went wrong. Please try again later.";
  }
-
+ if(!empty($login_err)){
+ echo '<div class="w-40 h-25 mx-auto alert alert-danger">' . $login_err . '</div>';
+ }      
  mysqli_stmt_close($stmt);
  }
  }
  mysqli_close($link);
 }
 
- if(!empty($login_err)){
- echo '<div class="alert alert-danger">' . $login_err . '</div>';
- }        
+ 
  ?>
 
  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -83,9 +83,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  <span class="invalid-feedback"><?php echo $password_err; ?></span>
  </div>
  <div>
- <hr class="style1">
+
  </div>
- <div class="form-group" style="padding: 2px;">
+ <div class="form-group" style="padding-top: 10px;">
  <input type="submit" class="btn btn-primary" value="Login">
  </div>
  <div>
@@ -94,6 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  <p>Don't have an account? <a href="signup.php">Sign up now</a>.</p>
  </form>
  </div>
+
 
  <?php $this->stopSection(); ?>
 
