@@ -11,7 +11,7 @@
                     @include('header')
                 </header>
                 <div
-  class="bg-image"
+  class="bg-image shadow"
   style="
     background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/beach-quotes-1559667853.jpg');
     height: 3%;
@@ -24,7 +24,7 @@
   </div>
 
 </div>
-<div class="bg-white container-fluid vh-100">test</div>
+
 
 
 

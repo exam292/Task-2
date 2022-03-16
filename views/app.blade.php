@@ -9,16 +9,14 @@
             <header class="row text-center mx-auto">
                 @include('header')
             </header>
-            <div class="d-flex flex-row flex-wrap">
-                <div class="d-flex p-2 border w-auto">@yield('content')</div>
-                <div class="d-flex p-2 border w-auto">@yield('content2')</div>
-            </div>
-            <div class="d-flex flex-row flex-wrap ">
-                <div class="d-flex p-2 border w-25">@yield('content2')</div>
-                <div class="d-flex p-2 border w-25">@yield('content')</div>
-            </div>
-            <div class="d-flex justify-content-center">
-                <div class="d-flex p-2 border w-25">@yield('content2')</div>
+
+            <div class="d-flex flex-wrap">
+                <div class="d-flex p-1 border w-25 h-50 flex-wrap">@yield('content')</div>
+                <div class="d-flex p-1 border w-25 h-50 flex-wrap">@yield('Leaderboard')</div>
+                <div class="d-flex p-1 border w-25 h-50 flex-wrap">@yield('Tasks')</div>
+                <div class="d-flex p-1 border w-25 h-50 flex-wrap">@yield('Courses')</div>
+                
+
             </div>
         </div>
             <div class="d-flex flex-column-reverse navbar bg-dark text-light fixed-bottom p-2">

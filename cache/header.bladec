@@ -12,13 +12,13 @@
  <a class="nav-link <?php if($page=="dashboard"): ?> active <?php endif; ?> <?php if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true): ?> disabled <?php endif; ?>" href="index.php">Dashboard</a>
  </li>
  <li class="nav-item">
- <a class="nav-link <?php if($page=="login"): ?> active <?php endif; ?>" href="login.php">Login</a>
+ <a class="nav-link <?php if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === true): ?> disabled <?php endif; ?>" href="login.php">Login</a>
  </li>
  <li class="nav-item">
- <a class="nav-link <?php if($page=="signup"): ?> active <?php endif; ?>" href="signup.php">Signup</a>
+ <a class="nav-link <?php if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === true): ?> disabled <?php endif; ?>" href="signup.php">Signup</a>
  </li>
  <li class="nav-item">
- <a class="nav-link <?php if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true): ?> disabled <?php endif; ?>" href="logout.php">Logout</a>
+ <a class="nav-link <?php if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false): ?> disabled <?php endif; ?>" href="logout.php">Logout</a>
  </li>
  <div class="dropdown">
  </div>
