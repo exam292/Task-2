@@ -12,12 +12,6 @@
             <a class="nav-link @if($page=="dashboard") active @endif @if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) disabled @endif" href="index.php">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link @if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === true) disabled @endif" href="login.php">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link @if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === true) disabled @endif" href="signup.php">Signup</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link @if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false) disabled @endif" href="logout.php">Logout</a>
           </li>
           <div class="dropdown">
