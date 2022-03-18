@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty($username_err) && empty($password_err)){
 
-        $sql = "SELECT id, username, password FROM students WHERE username = ?";
+        $sql = "SELECT id, username, password FROM teachers WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
 
@@ -45,11 +45,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
                             session_start();
-                            $_SESSION["student"] = true;
+                            $_SESSION["teacher"] = true;
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;                            
-                            header("location: index.php");
+                            header("location: teacherdashboard.php");
                         } else{
                             $login_err = "Invalid username or password.";
                         }
@@ -101,6 +101,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     @section('title')
 
-        <h1>Student Login:</h1>
+        <h1>Teacher Login:</h1>
 
     @endsection

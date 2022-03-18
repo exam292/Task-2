@@ -69,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
 
-        $sql = "INSERT INTO students (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO teachers (username, password) VALUES (?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
 
@@ -80,7 +80,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             if(mysqli_stmt_execute($stmt)){
 
-                header("location: login.php");
+                header("location: teacherlogin.php");
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -134,5 +134,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     @endsection
     @section('title')
-    <h1>Student Signup: </h1>
+    <h1>Teacher Signup: </h1>
     @endsection

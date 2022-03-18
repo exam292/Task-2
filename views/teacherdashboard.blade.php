@@ -32,20 +32,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 @endsection
 @section('Leaderboard')
 <div class="bg-light rounded shadow container-fluid p-3">
-    <h2>Leaderboard</h2>
+    <h2>Classes</h2>
     <hr class="style1">
 </div>
 @endsection
 @section('Tasks')
 <div class="bg-light rounded shadow container-fluid p-3">
-<h2>Tasks</h2>
+<h2>Students</h2>
 <hr class="style1">
 
 </div>
 @endsection
 @section('Courses')
 <div class="bg-light rounded shadow container-fluid p-3">
-<h2>Courses</h2>
+<h2>Schools</h2>
 <hr class="style1">
 
 </div>
