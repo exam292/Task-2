@@ -14,11 +14,6 @@
           <li class="nav-item">
             <a class="nav-link @if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false) disabled @endif" href="logout.php">Logout</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link @if(!isset($_SESSION["teacher"]) && !isset($_SESSION["loggedin"]) === true) disabled @endif" href="teacherdashboard.php">teacherdashboard</a>
-          </li>
-          <div class="dropdown">
-          </div>
         </ul>
       </div>
     </div>

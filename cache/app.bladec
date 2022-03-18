@@ -11,10 +11,10 @@
  </header>
 
  <div class="d-flex flex-wrap">
- <div class="d-flex p-1 border w-25 h-50 flex-wrap"><?php echo $this->yieldContent('content'); ?></div>
- <div class="d-flex p-1 border w-25 h-50 flex-wrap"><?php echo $this->yieldContent('Leaderboard'); ?></div>
- <div class="d-flex p-1 border w-25 h-50 flex-wrap"><?php echo $this->yieldContent('Tasks'); ?></div>
- <div class="d-flex p-1 border w-25 h-50 flex-wrap"><?php echo $this->yieldContent('Courses'); ?></div>
+ <div class="d-flex p-3 w-25 order-1" style="min-width: 480px;"><?php echo $this->yieldContent('content'); ?></div>
+ <div class="d-flex p-3 w-25 order-2" style="min-width: 480px;"><?php echo $this->yieldContent('Leaderboard'); ?></div>
+ <div class="d-flex p-3 w-25 order-3" style="min-width: 480px;"><?php echo $this->yieldContent('Tasks'); ?></div>
+ <div class="d-flex p-3 w-25 order-4" style="min-width: 480px;"><?php echo $this->yieldContent('Courses'); ?></div>
  
 
  </div>
