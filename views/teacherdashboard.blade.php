@@ -41,6 +41,37 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <h2>Students</h2>
 <hr class="style1">
 
+<?php 
+
+		$conn = mysqli_connect('localhost', 'root', '','website')
+				or die ('Connection Failed');
+		
+		$sql = 'SELECT * FROM students';
+		
+		$query = mysqli_query($conn, $sql);
+		echo "<table class='table'>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+				</tr>";
+		
+		while ($row = mysqli_fetch_array($query))
+		{
+			echo"<tr>
+                    <td>" . $row['id'] . "</td>
+					<td>" . $row['username'] . "</td>
+					<td> <A class='btn btn-primary' href='edit.php?pet_id=".$row['id']." '> Edit </a> </td>
+					<td> <A class='btn btn-danger' href='delete.php?pet_id=".$row['id']." '> Delete </a> </td>
+				</tr>";
+			
+		}
+		echo "
+		</table>
+		<A class='btn btn-success' style='width: auto;' href='add.php'> Add </a>";
+		
+		
+		echo mysqli_error($conn);
+        ?>
 </div>
 @endsection
 @section('Courses')

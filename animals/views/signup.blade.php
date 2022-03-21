@@ -1,16 +1,8 @@
-@extends('doublelayout')
+@extends('app')
 
 @section('content')
 
 <?php
-// Initialize the session
-session_start();
- 
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php");
-    exit;
-}
-
 // Include config file
 require_once "config.php";
 
@@ -26,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username_err = "Username can only contain letters, numbers, and underscores.";
     } else{
 
-        $sql = "SELECT id FROM students WHERE username = ?";
+        $sql = "SELECT id FROM users WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             mysqli_stmt_bind_param($stmt, "s", $param_username);
@@ -69,7 +61,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
 
-        $sql = "INSERT INTO students (username, first_name, last_name, email, password) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
 
@@ -98,53 +90,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
 
   <div class="wrapper">
-
+        <h2>Sign Up</h2>
+        <p>Please fill this form to create an account.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="username" placeholder="Username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
             </div>
             <div class="form-group">
-                <label>Email</label>
-                <input type="text" name="email" placeholder="examle@email.com" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>First Name</label>
-                <input type="text" name="last_name" placeholder="John" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" name="first_name" placeholder="Doe" class="form-control">
-            </div>
-            <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="password" placeholder="Password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-                <small id="passwordHelpBlock" class="form-text text-muted mx-auto">
-                    Your password must be 6-20 characters long.
-                  </small>
+                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
                 <label>Confirm Password</label>
-                <input type="password" name="confirm_password" placeholder="Confirm Password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
+                <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-            </div>
-            <div>
-                <hr class="style1">
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-secondary ml-2" value="Reset">
             </div>
-            <div>
-                <hr class="style1">
-            </div>
-            <p>Already have an account? <a href="teacherstudentlogin.php">Login here</a>.</p>
+            <p>Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
     </div>
 
-    @endsection
-    @section('title')
-    <h1>Student Signup: </h1>
     @endsection

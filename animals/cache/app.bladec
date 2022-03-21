@@ -1,0 +1,26 @@
+<!doctype html>
+ <html>
+ <head>
+ <?php echo $this->runChild('head'); ?>
+ </head>
+ <body class="mx-auto text-dark">
+ <div>
+ <header class="row text-center mx-auto">
+ <?php echo $this->runChild('header'); ?>
+ </header>
+ <div class="content">
+ <div class="row mx-auto align-items-center">
+ <div id="main" class="shadow p-3 mb-5 mx-auto bg-light" style="width: auto; height: auto;">
+ <?php echo $this->yieldContent('content'); ?>
+ </div>
+ </div>
+ </div>
+</div>
+ </div>
+ <footer>
+ <?php echo $this->runChild('footer'); ?>
+ </footer>
+ </div>
+ </body>
+ </html>
+ 

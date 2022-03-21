@@ -1,0 +1,18 @@
+body{
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,255,136,1) 0%, rgba(139,255,220,1) 100%);
+}
+.style1{
+	border-top: 1px solid #8c8b8b;
+}
+.scroll{
+    height:400px; width:100%; overflow:hidden; overflow-y:scroll;
+    }
+.content{
+text-align: center;
+padding: 130px 0;
+border: 3px;
+}
+.booton{
+    padding: 5px;
+}
