@@ -52,38 +52,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <div class="bg-light rounded shadow container-fluid p-3">
 <h2>Courses</h2>
 <hr class="style1">
-
-<?php 
-$mysqli = new mysqli("localhost", "root", "", "website");
-if($mysqli === false){
-    die("ERROR: Could not connect. " . $mysqli->connect_error);
-}
- 
-// Attempt select query execution
-$sql = "SELECT * FROM students";
-if($result = $mysqli->query($sql)){
-    if($result->num_rows > 0){
-        echo "<table>";
-            echo "<tr>";
-                echo "<th>id</th>";
-                echo "<th>first_name</th>";
-
-            echo "</tr>";
-        while($row = $result->fetch_array()){
-            echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['username'] . "</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-        // Free result set
-        $result->free();
-    } else{
-        echo "No records matching your query were found.";
-    }
-} else{
-    echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
-}
-?>
+<div class="card p-1" style="min-width: 250px ;">
+    <img src="https://www.open.edu/openlearn/pluginfile.php/1568585/mod_resource/content/0/opnl_1_786px.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Networking</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Join</a>
+    </div>
+  </div>
+  
+</div>
 </div>
 @endsection
