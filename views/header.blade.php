@@ -9,7 +9,7 @@
             <a class="nav-link @if($page=="home") active @endif" href="homepage.php">Home</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link @if($page=="dashboard") active @endif @if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) disabled @endif" href="index.php">Dashboard</a>
+            <a class="nav-link @if($page=="dashboard")active @endif @if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) disabled @endif" href="index.php">Dashboard</a>
           </li>
           <li class="nav-item">
             <a class="nav-link @if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false) disabled @endif" href="logout.php">Logout</a>

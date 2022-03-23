@@ -51,6 +51,7 @@ WHERE teachers.id='{$_SESSION['id']}'";
  <tr>
  <th>Course</th>
  <th>Code</th>
+ <th></th>
  </tr>";
  
  while ($row = mysqli_fetch_array($query))
@@ -68,6 +69,42 @@ WHERE teachers.id='{$_SESSION['id']}'";
  
  echo mysqli_error($conn);
  ?>
+
+ <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+	Create Classes
+ </button>
+ 
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+ <div class="modal-header">
+   <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+ <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+ <div class="modal-body">
+   
+ <form action="add-script.php" method="post">
+	
+ <p> Enter Pet Name: <input type="text" name="name" /> </p>
+ <p> Enter Pet Age: <input type="text" name="age" /> </p>
+ <p> Enter Pet Type: <input type="text" name="type" /> </p> 
+ <input class="btn btn-primary" type="submit" value="Add"/>
+ 
+ </form>
+
+
+ </div>
+ <div class="modal-footer">
+   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+   <button type="button" class="btn btn-primary">Save changes</button>
+ </div>
+	  </div>
+	</div>
+ </div>
 </div>
 <?php $this->stopSection(); ?>
 <?php $this->startSection('Tasks'); ?>
@@ -80,12 +117,12 @@ WHERE teachers.id='{$_SESSION['id']}'";
  $conn = mysqli_connect('localhost', 'root', '','website')
  or die ('Connection Failed');
  
- $sql = 'SELECT students.username AS Student_name, courses.name AS Course, teachers.username AS Teacher_name
+ $sql = "SELECT students.username AS Student_name, courses.name AS Course, teachers.username AS Teacher_name
 FROM classes
 INNER JOIN students ON classes.fk_student=students.id
 INNER JOIN courses ON classes.fk_course=courses.id
 INNER JOIN teachers ON classes.fk_teacher=teachers.id
-WHERE teachers.id=1';
+WHERE teachers.id='{$_SESSION['id']}'";
  
  $query = mysqli_query($conn, $sql);
  echo "<table class='table'>
@@ -115,7 +152,12 @@ WHERE teachers.id=1';
 <?php $this->startSection('Courses'); ?>
 <div class="bg-light rounded shadow container-fluid p-3">
 <h2>Schools</h2>
+
 <hr class="style1">
+
+
+
+
 
 </div>
 <?php $this->stopSection(); ?>

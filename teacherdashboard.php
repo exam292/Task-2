@@ -7,4 +7,4 @@
 
     $blade = new BladeOne($views,$cache,BladeOne::MODE_DEBUG);
 
-    echo $blade->run("teacherdashboard", array("page" => "signup"));
+    echo $blade->run("teacherdashboard", array("page" => "dashboard"));
