@@ -24,7 +24,7 @@
   </div>
 
 </div>
-
+<div class="d-flex justify-content-center align-items-center">@yield("cards")</div>
 
 
 
