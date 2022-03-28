@@ -1,3 +1,5 @@
+<!-- Logout Page -->
+
 <?php
 // Initialize the session
 session_start();
@@ -12,3 +14,5 @@ session_destroy();
 header("location: homepage.php");
 exit;
 ?>
+
+<!-- Logout Page -->

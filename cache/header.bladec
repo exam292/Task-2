@@ -1,9 +1,12 @@
+<!-- Navigation Bar -->
+
 <nav class="navbar shadow navbar-expand-lg bg-dark navbar-dark text-light">
  <div class="container">
  <a class="navbar-brand" href="#"><strong>GibJohn Tutoring</strong></a>
 
  </button>
  <div class="navbar" id="navbarSupportedContent">
+ 
  <ul class="navbar-nav mr-auto">
  <li class="nav-item active">
  <a class="nav-link <?php if($page=="home"): ?> active <?php endif; ?>" href="homepage.php">Home</a>
@@ -15,6 +18,10 @@
  <a class="nav-link <?php if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false): ?> disabled <?php endif; ?>" href="logout.php">Logout</a>
  </li>
  </ul>
+
  </div>
  </div>
- </nav>
+</nav>
+
+<!-- Navigation Bar -->
+

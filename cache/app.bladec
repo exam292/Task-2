@@ -1,11 +1,15 @@
+<!-- Dashboard Template -->
 
 <!DOCTYPE html>
+
 <html>
  <head>
  <?php echo $this->runChild('head'); ?>
  </head>
  <body class="text-dark">
+ 
  <div>
+ 
  <header class="row text-center mx-auto">
  <?php echo $this->runChild('header'); ?>
  </header>
@@ -15,13 +19,15 @@
  <div class="d-flex p-3 w-25" style="min-width: 480px;"><?php echo $this->yieldContent('Leaderboard'); ?></div>
  <div class="d-flex p-3 w-25" style="min-width: 480px;"><?php echo $this->yieldContent('Tasks'); ?></div>
  <div class="d-flex p-3 w-25" style="min-width: 480px;"><?php echo $this->yieldContent('Courses'); ?></div>
- 
+ </div>
 
  </div>
- </div>
+
  <div class="d-flex flex-column-reverse navbar bg-dark text-light fixed-bottom p-2">
  <?php echo $this->runChild('footer'); ?>  
  </div>
  
  </body>
 </html>
+
+<!-- Dashboard Template -->

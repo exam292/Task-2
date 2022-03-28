@@ -1,3 +1,5 @@
+<!-- Signup / Login page for Students & Teachers -->
+
 <?php
     include 'BladeOne/lib/BladeOne.php';
     use eftec\bladeone\BladeOne;

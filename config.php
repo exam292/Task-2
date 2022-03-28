@@ -1,4 +1,6 @@
-<?php
+<!-- Database Connection Config -->
+
+<?php //Config script for the connection between the website and the MySQL database
     define('DB_SERVER', 'localhost');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', '');
@@ -10,3 +12,5 @@
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }
 ?>
+
+<!-- Database Connection Config -->

@@ -1,3 +1,5 @@
+<!-- Homepage PHP -->
+
 <?php
     include 'BladeOne/lib/BladeOne.php';
     use eftec\bladeone\BladeOne;
@@ -8,3 +10,4 @@
     $blade = new BladeOne($views,$cache,BladeOne::MODE_DEBUG);
 
     echo $blade->run("homepage",array("page" => "home"));
+

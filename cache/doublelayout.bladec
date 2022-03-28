@@ -1,11 +1,12 @@
+<!-- Layout Template -->
 
 <!DOCTYPE html>
- <html>
+
+<html>
  <head>
  <?php echo $this->runChild('head'); ?>
  </head>
  <body class="text-dark">
- <div>
  <header class="row text-center mx-auto">
  <?php echo $this->runChild('header'); ?>
  </header>
@@ -15,8 +16,11 @@
  <div class="d-flex p-2"><?php echo $this->yieldContent('content'); ?></div>
  <div class="d-flex p-2"><?php echo $this->yieldContent('content2'); ?></div>
  </div>
+
  <div class="d-flex flex-column-reverse navbar bg-dark text-light fixed-bottom p-2">
  <?php echo $this->runChild('footer'); ?>  
  </div>
  </body>
- </html>
+</html>
+
+<!-- Layout Template -->

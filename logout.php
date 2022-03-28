@@ -1,3 +1,4 @@
+<!-- Logout PHP -->
 
 <?php
     include 'BladeOne/lib/BladeOne.php';

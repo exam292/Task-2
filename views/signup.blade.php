@@ -1,3 +1,5 @@
+<!-- Student signup -->
+
 @extends('doublelayout')
 
 @section('content')
@@ -7,7 +9,7 @@
 session_start();
  
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php");
+    header("location: index.php"); //If the user is logged in they're redirected to the student dashboard
     exit;
 }
 
@@ -52,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter a password.";     
-    } elseif(strlen(trim($_POST["password"])) < 6){
+    } elseif(strlen(trim($_POST["password"])) < 6){ //User's must have a password longer than 6 characters to make it harder to gain unauthorised access
         $password_err = "Password must have atleast 6 characters.";
     } else{
         $password = trim($_POST["password"]);
@@ -94,11 +96,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
-
-    
-
-  <div class="wrapper">
-
+    <div class="wrapper">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Username</label>
@@ -132,7 +130,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </form>
     </div>
 
-    @endsection
-    @section('title')
+@endsection
+
+@section('title')
+
     <h1>Student Signup: </h1>
-    @endsection
+
+@endsection
+
+<!-- Student signup -->
