@@ -13,7 +13,7 @@
       <header class="row text-center mx-auto">
         @include('header')
       </header>
-    <div class="bg-image shadow"
+    <div class="bg-image shadow" alt="A Sunny Beach"
       style="
       background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/beach-quotes-1559667853.jpg');
       height: 3%;
