@@ -1,3 +1,5 @@
+<!-- Change Password Page -->
+
 @extends('doublelayout')
 
 @section('content')
@@ -126,3 +128,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </form>
     </div>    
 @endsection
+
+<!-- Change Password Page -->

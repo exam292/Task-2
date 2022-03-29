@@ -91,7 +91,7 @@
     }
         
     mysqli_close($link);
-
+    }
 ?>
 
     
@@ -143,7 +143,7 @@
     @section('title')
 
     <h1>Teacher Signup: </h1>
-    
+
     @endsection
 
 <!-- Teacher Signup -->

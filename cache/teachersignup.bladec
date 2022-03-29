@@ -1,23 +1,24 @@
+<!-- Teacher Signup -->
 <?php $_shouldextend[1]=1; ?>
 
 <?php $this->startSection('content'); ?>
 
 <?php
-// Initialize the session
-session_start();
+ // Initialize the session
+ session_start();
  
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
- header("location: index.php");
+ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+ header("location: index.php"); //If the user is logged in they're redirected to the student dashboard
  exit;
-}
+ }
 
-// Include config file
-require_once "config.php";
+ // Include config file
+ require_once "config.php";
 
-$username = $password = $confirm_password = "";
-$username_err = $password_err = $confirm_password_err = "";
+ $username = $password = $confirm_password = "";
+ $username_err = $password_err = $confirm_password_err = "";
  
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
  // Validate username
  if(empty(trim($_POST["username"]))){
@@ -79,7 +80,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  $param_password = password_hash($password, PASSWORD_DEFAULT);
 
  if(mysqli_stmt_execute($stmt)){
-
  header("location: teacherlogin.php");
  } else{
  echo "Oops! Something went wrong. Please try again later.";
@@ -90,21 +90,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  }
  }
  
-
  mysqli_close($link);
-}
+ }
 ?>
 
  
 
  <div class="wrapper">
-
  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
  <div class="form-group">
  <label>Username</label>
  <input type="text" name="username" placeholder="Username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
  <span class="invalid-feedback"><?php echo $username_err; ?></span>
  </div>
+
  <div class="form-group">
  <label>Password</label>
  <input type="password" name="password" placeholder="Password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
@@ -113,27 +113,38 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  </small>
  <span class="invalid-feedback"><?php echo $password_err; ?></span>
  </div>
+
  <div class="form-group">
  <label>Confirm Password</label>
  <input type="password" name="confirm_password" placeholder="Confirm Password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
  <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
  </div>
+
  <div>
  <hr class="style1">
  </div>
+ 
  <div class="form-group">
  <input type="submit" class="btn btn-primary" value="Submit">
  <input type="reset" class="btn btn-secondary ml-2" value="Reset">
  </div>
+
  <div>
  <hr class="style1">
  </div>
+
  <p>Already have an account? <a href="teacherstudentlogin.php">Login here</a>.</p>
+
  </form>
  </div>
 
  <?php $this->stopSection(); ?>
+
  <?php $this->startSection('title'); ?>
+
  <h1>Teacher Signup: </h1>
+
  <?php $this->stopSection(); ?>
+
+<!-- Teacher Signup -->
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('doublelayout'); } ?>

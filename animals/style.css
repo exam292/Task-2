@@ -2,7 +2,7 @@ body{
 background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,255,136,1) 0%, rgba(139,255,220,1) 100%);
 }
-.style1{
+.fadedline{
 	border-top: 1px solid #8c8b8b;
 }
 .scroll{

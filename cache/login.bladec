@@ -1,12 +1,15 @@
+<!-- Login Page -->
+
 <?php $_shouldextend[1]=1; ?>
 
 <?php $this->startSection('content'); ?>
+
 <?php
 
-session_start();
+session_start(); //Login Script
 
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
- header("location: index.php");
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){ //Checking if the user is already logged in
+ header("location: index.php"); //if true, the user gets redirected to index.php
  exit;
 }
 
@@ -31,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
  if(empty($username_err) && empty($password_err)){
 
- $sql = "SELECT id, username, password FROM students WHERE username = ?";
+ $sql = "SELECT id, username, password FROM students WHERE username = ?"; //Getting the Password and ID from the students table
  
  if($stmt = mysqli_prepare($link, $sql)){
 
@@ -69,39 +72,42 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  mysqli_close($link);
 }
 
- 
- ?>
+?>
 
- <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
  <div class="form-group">
  <label>Username</label>
  <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
  <span class="invalid-feedback"><?php echo $username_err; ?></span>
  </div>    
+
  <div class="form-group">
  <label>Password</label>
  <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
  <span class="invalid-feedback"><?php echo $password_err; ?></span>
  </div>
- <div>
 
- </div>
  <div class="form-group" style="padding-top: 10px;">
  <input type="submit" class="btn btn-primary" value="Login">
  </div>
+
  <div>
  <hr class="style1">
  </div>
+
  <p>Don't have an account? <a href="teacherstudentsignup.php">Sign up now</a>.</p>
- </form>
- </div>
+</form>
 
 
- <?php $this->stopSection(); ?>
 
- <?php $this->startSection('title'); ?>
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('title'); ?>
 
  <h1>Student Login:</h1>
 
- <?php $this->stopSection(); ?>
+<?php $this->stopSection(); ?>
+
+ <!-- Login Page -->
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('doublelayout'); } ?>

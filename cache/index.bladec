@@ -49,8 +49,44 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <?php $this->startSection('Tasks'); ?>
 
 <div class="bg-light rounded shadow container-fluid p-3">
- <h2>Tasks</h2>
+ <h2>Your Students</h2>
  <hr class="style1">
+ 
+ <?php 
+ 
+ $conn = mysqli_connect('localhost', 'root', '','website')
+ or die ('Connection Failed');
+ 
+ $sql = "SELECT students.username AS Student_name, courses.name AS Course, teachers.username AS Teacher_name
+ FROM classes
+ INNER JOIN students ON classes.fk_student=students.id
+ INNER JOIN courses ON classes.fk_course=courses.id
+ INNER JOIN teachers ON classes.fk_teacher=teachers.id
+ WHERE students.id='{$_SESSION['id']}'";
+ 
+ $query = mysqli_query($conn, $sql);
+ echo "<table class='table'>
+ <tr>
+ <th>Student Name</th>
+ <th>Course</th>
+ <th>Teacher</th>
+ </tr>";
+ 
+ while ($row = mysqli_fetch_array($query))
+ {
+ echo"<tr>
+ <td>" . $row['Student_name'] . "</td>
+ <td>" . $row['Course'] . "</td>
+ <td>" . $row['Teacher_name'] . "</td>
+ </tr>";
+ 
+ }
+ echo "
+ </table>";
+ 
+ 
+ echo mysqli_error($conn);
+ ?>
 </div>
 
 <?php $this->stopSection(); ?>
