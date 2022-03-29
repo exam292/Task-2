@@ -7,8 +7,9 @@
     define('DB_NAME', 'website');
 
     $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
-    if($link === false){
+    // Attempt to connect to MySQL database
+    
+    if($link === false){ // Check connection
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }
 ?>
