@@ -8,7 +8,7 @@
  <a href="signup.php" class="booton btn btn-success shadow">Student signup</a> <!-- Upon clicking the button,
  The user will be redirected to the correct pages -->
  </div>
- <hr class="style1">
+ <hr class="thin-line">
  <div class="p-2">
  <a href="teachersignup.php" class="booton btn btn-success shadow">Teacher signup</a>
  </div>

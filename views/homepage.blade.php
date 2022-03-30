@@ -26,4 +26,17 @@ session_start();
 
 @endsection
 
+@section('information')
+
+<div class="container-fluid px-4 text-center text-white p-5 col" style="padding-top: 300px;">
+
+  <h4>Welcome to</h4>
+  <h1>GibJohn Tutoring</h1>
+
+    <hr class="style1">
+
+</div>
+
+@endsection
+
 <!-- Homepage Template -->

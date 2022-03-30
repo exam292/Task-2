@@ -64,7 +64,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
  echo"<tr>
  <td>" . $row['Course'] . "</td>
  <td>" . $row['Code'] . "</td>
- <td> <A class='btn btn-primary' href='edit.php?course=".$row['Course']." '> Manage </a> </td>
+ <td> <A class='btn btn-primary disabled' href='edit.php?course=".$row['Course']." '> Manage </a> </td>
  </tr>";
  
  }
@@ -76,7 +76,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
  ?>
 
  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+<button type="button" class="btn btn-primary disabled" data-toggle="modal" data-target="#exampleModalLong">
 	Create Classes
  </button>
  
@@ -128,6 +128,7 @@ WHERE teachers.id='{$_SESSION['id']}'";
  <th>Student Name</th>
  <th>Course</th>
  <th>Teacher</th>
+ <th></th>
  </tr>";
  
  while ($row = mysqli_fetch_array($query))
@@ -136,6 +137,7 @@ WHERE teachers.id='{$_SESSION['id']}'";
  <td>" . $row['Student_name'] . "</td>
  <td>" . $row['Course'] . "</td>
  <td>" . $row['Teacher_name'] . "</td>
+ <td> <A class='btn btn-primary disabled' href='edit.php?course=".$row['Course']." '> Manage </a> </td>
  </tr>";
  
  }

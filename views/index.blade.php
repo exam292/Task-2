@@ -42,6 +42,35 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <div class="bg-light rounded shadow container-fluid p-3">
     <h2>Leaderboard</h2>
     <hr class="style1">
+    <?php 
+    
+    $conn = mysqli_connect('localhost', 'root', '','website')
+            or die ('Connection Failed');
+    
+            $sql = "SELECT DISTINCT username, score FROM students ORDER BY score DESC";
+		
+    
+    $query = mysqli_query($conn, $sql);
+    echo "<table class='table'>
+            <tr>
+                <th>Student Name</th>
+                <th>Score</th>
+            </tr>";
+    
+    while ($row = mysqli_fetch_array($query))
+    {
+        echo"<tr>
+                <td>" . $row['username'] . "</td>
+                <td>" . $row['score'] . "</td>
+            </tr>";
+        
+    }
+    echo "
+    </table>";
+    
+    
+    echo mysqli_error($conn);
+    ?>
 </div>
 
 @endsection
@@ -56,22 +85,25 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     
             $conn = mysqli_connect('localhost', 'root', '','website')
                     or die ('Connection Failed');
-            
+
+                //Select statement
             $sql = "SELECT students.username AS Student_name, courses.name AS Course, teachers.username AS Teacher_name
-    FROM classes
-    INNER JOIN students ON classes.fk_student=students.id
-    INNER JOIN courses ON classes.fk_course=courses.id
-    INNER JOIN teachers ON classes.fk_teacher=teachers.id
-    WHERE students.id='{$_SESSION['id']}'";
+                    FROM classes
+                    INNER JOIN students ON classes.fk_student=students.id
+                    INNER JOIN courses ON classes.fk_course=courses.id 
+                    INNER JOIN teachers ON classes.fk_teacher=teachers.id
+                    WHERE students.id='{$_SESSION['id']}'";
             
             $query = mysqli_query($conn, $sql);
+            //create the table
             echo "<table class='table'>
                     <tr>
-                        <th>Student Name</th>
+                        <th>Student Name</th> 
                         <th>Course</th>
                         <th>Teacher</th>
                     </tr>";
             
+            //display data from the database
             while ($row = mysqli_fetch_array($query))
             {
                 echo"<tr>
